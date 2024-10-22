@@ -31,6 +31,9 @@ https://github.com/milkdrop2077/MilkDrop3/tree/main
 https://github.com/leadedge/BeatDrop
 (BeatDrop with Spout integration)
 
+https://github.com/OfficialIncubo/BeatDrop-Music-Visualizer
+(BeatDrop with Spout integration - updated)
+
 https://github.com/projectM-visualizer/
 https://sourceforge.net/projects/milkdrop2/
 
