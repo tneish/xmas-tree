@@ -11,6 +11,9 @@ https://leadedge.github.io/spout-projects.html
 **Time-sync**
 RTP/Airplay server [2]
 
+**neopixel array capture**
+Spout receiver [5]
+
 **Bandwidth**
 4 strings * 50 pixels = 200 pixels
 24bits per pixel * 200 pixels = 4.8kb (600B)  [4]
@@ -20,6 +23,7 @@ RTP/Airplay server [2]
 **neopixel driver in tree**
 Needs RTP (airplay server) [2]
 RPi Pico W fast enough? [3]
+
 
 ------
 [1] Milkdrop
@@ -52,3 +56,6 @@ https://forums.raspberrypi.com/viewtopic.php?t=339512
 
 [4]
 https://learn.adafruit.com/adafruit-neopixel-uberguide/advanced-coding
+
+[5]
+https://github.com/leadedge/ofSpoutDemo
