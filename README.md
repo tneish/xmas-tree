@@ -1,6 +1,7 @@
 # xmas-tree
 
-milkdrop -> spout -> neopixel array capture --wifi (RTP)--> neopixel driver (in tree)
+milkdrop (Enhanced BeatDrop w/Spout) --> spout --> neopixel array capture (Processing 4) --wifi (delay-compensated)--> neopixel receiver (Rpi4) --(SPI)--> neopixel driver, RP2040 (in tree)
+TuneBlade --(airplay)--> Sonos speaker
 
 **Milkdrop**
 Presets for 200 pixels on a tree.. [1]
