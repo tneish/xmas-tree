@@ -14,6 +14,12 @@ Raspberry Pi Pico W running CircuitPython, [rpi_pico_neopixel_receiver](https://
 
 (Receives pixel RGBW values from headend and displays them on Neopixels)
 
+I tried first with an RPi4 using SMI (secondary memory interface) (see [tneish/rpi_neopixel_smi](https://github.com/tneish/rpi_neopixel_smi)) but there was too much jitter/interference from the OS and drivers messing with the SMI transfers.
+
+Note RPi dropped SMI starting with RPi 5, and RPi OS starting with Bookworm runs many upstream kernel drivers in ARM which mess even more with DMA/SMI so it's a dead-end.
+
+RPi Pico W (RP2040) with WiFi and PIOs is much more suited.
+
 
 ### Bandwidth
 160-180kbps for 200 pixels at ~30fps.
