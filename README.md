@@ -1,62 +1,21 @@
 # xmas-tree
 
-milkdrop (Enhanced BeatDrop w/Spout) --> spout --> neopixel array capture (Processing 4) --wifi (delay-compensated)--> neopixel receiver (Rpi4) --(SPI)--> neopixel driver, RP2040 (in tree)
-TuneBlade --(airplay)--> Sonos speaker
+## Headend
+Headend is [OfficialIncubo/BeatDrop-Music-Visualizer](https://github.com/OfficialIncubo/BeatDrop-Music-Visualizer)
 
-**Milkdrop**
-Presets for 200 pixels on a tree.. [1]
+(BeatDrop with Spout integration - updated). Can use Milkdrop plugins and code 'shaders' in real-time. Nice!
 
-**Spout**
-https://leadedge.github.io/spout-projects.html
+With [tneish/spout_receiver](https://github.com/tneish/spout_receiver)
 
-**Time-sync**
-RTP/Airplay server [2]
+(Uses Processing 4 to receive from Spout, then captures 200 pixels in a 'tree shape' and sends them over the network)
 
-**neopixel array capture**
-Spout receiver [5]
+## In-tree
+Raspberry Pi Pico W running CircuitPython, [rpi_pico_neopixel_receiver](https://github.com/tneish/rpi_pico_neopixel_receiver).
 
-**Bandwidth**
-4 strings * 50 pixels = 200 pixels
-24bits per pixel * 200 pixels = 4.8kb (600B)  [4]
-14+20+8+12 Eth/IP/UDP/RTP overhead = 654B
-1Mbit WiFi PHY * 70% (wifi overhead) = 700kbps =~ 7.5ms per frame (~130fps)
-
-**neopixel driver in tree**
-Needs RTP (airplay server) [2]
-RPi Pico W fast enough? [3]
+(Receives pixel RGBW values from headend and displays them on Neopixels)
 
 
-------
-[1] Milkdrop
-https://github.com/mvsoft74/BeatDrop
+### Bandwidth
+160-180kbps for 200 pixels at ~30fps.
 
-https://github.com/milkdrop2077/MilkDrop3/tree/main
-(based on BeatDrop)
-
-https://github.com/leadedge/BeatDrop
-(BeatDrop with Spout integration)
-
-https://github.com/OfficialIncubo/BeatDrop-Music-Visualizer
-(BeatDrop with Spout integration - updated)
-
-https://github.com/projectM-visualizer/
-https://sourceforge.net/projects/milkdrop2/
-
-Writing milkdrop presets 
-https://web.archive.org/web/20130825023759/http://www.milkdrop.co.uk/guide.htm#gettingstarted
-https://www.geisswerks.com/milkdrop/milkdrop_preset_authoring.html
-
-[2]
-https://nto.github.io/AirPlay.html#audio-rtpstreams
-https://github.com/mikebrady/shairport-sync
-http://www.tuneblade.com/
-
-
-[3] RPi Pico W speeds
-https://forums.raspberrypi.com/viewtopic.php?t=339512
-
-[4]
-https://learn.adafruit.com/adafruit-neopixel-uberguide/advanced-coding
-
-[5]
-https://github.com/leadedge/ofSpoutDemo
+RPi Pico W with Circuitpython and PIOs works just fine.
